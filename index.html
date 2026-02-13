@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>Teszt</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  background:#020617;
+  color:white;
+  font-family:Arial;
+  margin:0;
+}
+
+nav {
+  background:#111827;
+  padding:1rem;
+  text-align:center;
+}
+
+nav button {
+  background:none;
+  border:none;
+  color:white;
+  margin:0 10px;
+  cursor:pointer;
+}
+
+section { display:none; padding:20px; }
+section.active { display:block; }
+
+.card {
+  background:#1e293b;
+  padding:20px;
+  border-radius:12px;
+  max-width:600px;
+  margin:auto;
+}
+
+.card img {
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:12px;
+  border:2px solid #38bdf8;
+  margin-top:15px;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <button onclick="tab('gallery')">Képek</button>
+  <button onclick="tab('mods')">Modok</button>
+</nav>
+
+<section id="gallery" class="active">
+  <div class="card">
+    <h2>Képek</h2>
+    <img src="Kamion.jpg" alt="Kamion">
+    <img src="bus.jpg" alt="Busz">
+  </div>
+</section>
+
+<section id="mods">
+  <div class="card">
+    <h2>Nova Hungary Map</h2>
+    <img src="nova-hungary-map.jpg" alt="Nova Map">
+  </div>
+</section>
+
+<script>
+function tab(id){
+  document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+}
+</script>
+
+</body>
+</html>
